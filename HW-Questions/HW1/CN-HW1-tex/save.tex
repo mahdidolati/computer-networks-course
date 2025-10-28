@@ -1,0 +1,596 @@
+\section*{پرسش نخست}
+
+
+برای هرکدام از زبان‌های زیر، یک دستور زبان مستقل از متن ارائه دهید.
+\begin{enumerate}
+	\item  \(L = \{ w \in \{a, b, c\}^* \mid 2n_a(w) = n_b(w) + n_c(w) \} \) \nomre{8}
+	\item \(L = \{ a^n b^m \mid n \leq m + 3 \} \) \nomre{8}
+	\item \(L = \{ w \in \{a, b\}^* \mid 2n_a(w) = n_b(w) \} \) \nomre{8}
+	\item \(L = \{ \{a, b\}^* \mid \{a, b\}^* \, aba \, \{a, b\}^* \notin L \} \) \nomre{8}
+\end{enumerate}
+
+
+\section*{پاسخ}
+
+
+
+
+\begin{enumerate}
+	\item \[
+	\begin{aligned}
+		S &\rightarrow a T T S \mid T a T S \mid T T a S \mid \varepsilon \\
+		T &\rightarrow b \mid c
+	\end{aligned}
+	\]
+	
+	\item \[
+	\begin{aligned}
+		S &\rightarrow aaaA \mid aaA \mid aA \mid\epsilon \\
+		A &\rightarrow aAb \mid B \\
+		B &\rightarrow Bb \mid \epsilon
+	\end{aligned}
+	\]
+	
+	\item \[
+	\begin{aligned}
+		S &\rightarrow SaSaSb \mid SaSbSa \mid SbSaSa \mid \epsilon
+	\end{aligned}
+	\]
+	
+	\item \[
+	\begin{aligned}
+		S &\rightarrow aA \mid bS \mid \epsilon \\
+		A &\rightarrow aA \mid bB \mid \epsilon \\
+		B &\rightarrow bS \mid \epsilon
+	\end{aligned}
+	\]
+	
+	
+\end{enumerate}
+
+
+\section*{پرسش دوم}
+
+
+دستور زبان مستقل از متن زیر را در نظر بگیرید و موارد خواسته شده را روی آن اعمال کنید. 
+
+\[
+\begin{aligned}
+	S &\rightarrow AE \mid CA \mid aAa \mid bBb \mid \varepsilon \\
+	A &\rightarrow C \mid a \\
+	B &\rightarrow C \mid b \\
+	C &\rightarrow aE \mid b \mid \varepsilon \\
+	D &\rightarrow A \mid B \mid ab \\
+	E &\rightarrow EC \mid AE
+\end{aligned}
+\]
+
+
+
+
+\begin{enumerate}
+	
+	\item {در صورت وجود، نمادهای بدون کاربرد را حذف کنید.} \nomre{2}
+	\item {قواعد اپسیلون را حذف کنید.} \nomre{2}
+	\item {قواعد یکه را حذف کنید.} \nomre{2}
+	\item {در صورت وجود، قواعد بی‌کاربرد را حذف کنید.} \nomre{2}
+	\item {دستور زبان معادل به دست آمده را یه م نرمال چامسکی تبدیل کنید.} \nomre{2}
+	\item {اگر رشته \( W \) به طول \( L \) متعلق به دستور زبان به دست آمده باشد، طول اشتقاق \( W \) چقدر خواهد بود؟ } \nomre{2}
+	
+\end{enumerate}
+
+\section*{پاسخ}
+
+
+\begin{enumerate}
+	\item {سمبل‌های E و D اضافه هستند پس آنهارا حذف می‌کنیم.}
+	\[
+	\begin{aligned}
+		S &\rightarrow CA \mid aAa \mid bBb \mid \epsilon \\
+		A &\rightarrow C \mid a \\
+		B &\rightarrow C \mid b \\
+		C &\rightarrow b \mid \epsilon
+	\end{aligned}
+	\]
+	\item 
+	\begin{itemize}
+		\item {حدف قایده اپسیلون .S}
+		\[
+		\begin{aligned}
+			S' &\rightarrow S \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \\
+			A &\rightarrow C \mid a \\
+			B &\rightarrow C \mid b \\
+			C &\rightarrow b \mid \epsilon
+		\end{aligned}
+		\]
+		\item {حدف قایده اپسیلون .C}
+		\[
+		\begin{aligned}
+			S' &\rightarrow S \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \mid A \\
+			A &\rightarrow C \mid a \mid \epsilon \\
+			B &\rightarrow C \mid b \mid \epsilon \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+		\item {حدف قایده اپسیلون A و .B}
+		\[
+		\begin{aligned}
+			S &\rightarrow CA \mid aAa \mid bBb \mid A \mid C \mid aa \mid bb \mid \epsilon \\
+			A &\rightarrow C \mid a \\
+			B &\rightarrow C \mid b \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+		\item {در نهایت خواهیم داشت.}
+		\[
+		\begin{aligned}
+			S' &\rightarrow S \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \mid A \mid C \mid aa \mid bb \\
+			A &\rightarrow C \mid a \\
+			B &\rightarrow C \mid b \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+	\end{itemize}
+	\item 
+	\begin{itemize}
+		\item {C $\rightarrow$ A / C $\rightarrow$ B}
+		\[
+		\begin{aligned}
+			S' &\rightarrow S \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \mid A \mid C \mid aa \mid bb \\
+			A &\rightarrow b \mid a \\
+			B &\rightarrow b \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+		\item {A $\rightarrow$ S / C $\rightarrow$ S}
+		\[
+		\begin{aligned}
+			S' &\rightarrow S \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \mid a \mid b \mid aa \mid bb \\
+			A &\rightarrow b \mid a \\
+			B &\rightarrow b \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+		\item {S $\rightarrow$ S'}
+		\[
+		\begin{aligned}
+			S' &\rightarrow CA \mid aAa \mid bBb \mid a \mid b \mid aa \mid bb \mid \epsilon \\
+			S &\rightarrow CA \mid aAa \mid bBb \mid a \mid b \mid aa \mid bb \\
+			A &\rightarrow b \mid a \\
+			B &\rightarrow b \\
+			C &\rightarrow b
+		\end{aligned}
+		\]
+	\end{itemize}
+	\item {قاعده C بدون کاربرد و تکراری است.}	
+	\[\begin{aligned}
+		S' &\rightarrow BA \mid aAa \mid bBb \mid a \mid b \mid aa \mid bb \mid \epsilon \\
+		S &\rightarrow BA \mid aAa \mid bBb \mid a \mid b \mid aa \mid bb \\
+		A &\rightarrow b \mid a \\
+		B &\rightarrow b
+	\end{aligned}\]
+	
+	\item {فرم نرمال چامسکی به شکل زیر است.}
+	\begin{itemize}
+		\item
+		\begin{align*}
+			S' & \rightarrow BA \mid A'AA' \mid BBB \mid a \mid b \mid A'A' \mid BB \mid \epsilon \\
+			S & \rightarrow BA \mid A'AA' \mid BBB \mid a \mid b \mid A'A' \mid BB \\
+			A & \rightarrow b \mid a \\
+			B & \rightarrow b \\
+			A' & \rightarrow a
+		\end{align*}
+		
+		\item
+		\begin{align*}
+			S' & \rightarrow BA \mid CA' \mid DB \mid a \mid b \mid A'A' \mid BB \mid \epsilon \\
+			S & \rightarrow BA \mid CA' \mid DB \mid a \mid b \mid A'A' \mid BB \\
+			A & \rightarrow b \mid a \\
+			B & \rightarrow b \\
+			A' & \rightarrow a \\
+			D & \rightarrow BB \\
+			C & \rightarrow A'A
+		\end{align*}
+		
+	\end{itemize}
+\end{enumerate}
+
+\section*{پرسش سوم}
+
+
+نشان دهید که دستور زبان‌ متنی اول مبهم است و دستور زبان متنی دوم را رفع ابهام کنید. 
+\begin{enumerate}
+	\item \nomre{3}\[
+	\begin{aligned}
+		S &\rightarrow A \mid aB \\
+		A &\rightarrow aSa \mid SB \mid a \\
+		B &\rightarrow AS
+	\end{aligned}
+	\]
+	
+	
+	\item \nomre{8} \[
+	\begin{aligned}
+		S &\rightarrow aS \mid aSbS \mid c
+	\end{aligned}
+	\]
+\end{enumerate}
+
+
+
+\section*{پاسخ}
+
+
+\begin{center}
+	\begin{tikzpicture}[level distance=1.5cm, sibling distance=1cm]
+		% First Parse Tree
+		\node {S}
+		child { node {a} }
+		child { node {S}
+			child { node {A}
+				child { node {a} }
+			}
+		}
+		child { node {a} };
+	\end{tikzpicture} 
+	\hspace{2cm} % Adjust space between trees
+	\begin{tikzpicture}[level distance=1.5cm, sibling distance=1cm]
+		% Second Parse Tree
+		\node {S}
+		child { node {a} }
+		child { node {B} 
+			child { node {A} 
+				child { node {a} }
+			}
+			child { node {S} % Child for S
+				child { node {A} 
+					child { node {a} }
+				}
+			}
+		}; % Corrected syntax by removing the trailing semicolon from here
+	\end{tikzpicture}
+\end{center}
+
+
+\[
+\begin{aligned}
+	S & \rightarrow T \mid R \\
+	T & \rightarrow aTbT \mid c \\
+	R & \rightarrow aS \mid aTbR
+\end{aligned}
+\]
+
+
+\section*{پرسش چهارم}
+
+برای زبان‌ها و خودکاره‌های پشته‌ای ارایه شده، به ترتیب یک خودکاره پشته‌ای و یک زبان ارایه دهید.
+
+\begin{enumerate}
+	\item \(L = \{ a^i b^j c^k \mid j \leq \max(i, k); \, i, j, k \geq 0 \}\) \nomre{10}
+	\item \(L = \left\{ a^n b^{3m} c^{2m} d^{n-1} \ \middle| \ n, m \geq 1 \right\}\) \nomre{10}
+	
+	\item \nomre{10}
+	\begin{minipage}{\textwidth}
+		\centering
+		\begin{tikzpicture}[shorten >=1pt, node distance=3.5cm, on grid, auto, scale=1.2, every node/.style={transform shape, font=\Large}] 
+			\node[state, initial] (q_0) {$q_0$}; 
+			\node[state] (q_1) [above right=of q_0] {$q_1$}; 
+			\node[state] (q_2) [right=of q_1] {$q_2$}; 
+			\node[state] (q_3) [right=of q_2] {$q_3$}; 
+			\node[state] (q_f) [right=of q_3, accepting] {$q_F$}; 
+			\node[state] (q_4) [below right=of q_0] {$q_4$}; 
+			\node[state] (q_5) [right=of q_4] {$q_5$}; 
+			\node[state] (q_6) [right=of q_5] {$q_6$}; 
+			
+			\path[->] 
+			(q_0) edge node {$\epsilon, \epsilon / \$ $} (q_1)
+			edge [below] node {$\epsilon, \epsilon / \$ $} (q_4)
+			(q_1) edge [loop above] node {$a, \epsilon / A$} ()
+			edge node {$\epsilon, \epsilon / \epsilon$} (q_2)
+			(q_2) edge [loop above] node {$b, A / \epsilon$} ()
+			edge node {$\epsilon, \$ / \$ $} (q_3)
+			(q_3) edge [loop above] node {$c, \epsilon / \epsilon$} ()
+			edge node {$\epsilon, \$ / \epsilon $} (q_f)
+			(q_4) edge [loop above] node {$a, \epsilon / \epsilon$} ()
+			edge node {$\epsilon, \epsilon / \epsilon$} (q_5)
+			(q_5) edge [loop above] node {$b, \epsilon / B$} ()
+			edge node {$\epsilon, \epsilon / \epsilon$} (q_6)
+			(q_6) edge [loop above] node {$c, B / \epsilon$} ()
+			edge node {$\epsilon, \$ / \epsilon $} (q_f);
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\item \nomre{10}
+	\begin{minipage}{\textwidth}
+		\centering
+		\begin{tikzpicture}[shorten >=1pt, node distance=3.5cm, on grid, auto, scale=1.2, every node/.style={transform shape, font=\Large}] 
+			\node[state, initial] (q_0) {$q_0$}; 
+			\node[state] (q_1) [right=of q_0] {$q_1$}; 
+			\node[state] (q_2) [right=of q_1] {$q_2$}; 
+			\node[state, accepting] (q_f) [right=of q_2] {$q_F$}; 
+			
+			\path[->] 
+			(q_0) edge node {$\epsilon, \epsilon / \$ $} (q_1)
+			(q_1) edge [loop above] node {$a, \epsilon / AA$} ()
+			edge [loop below] node {$a, \epsilon / A$} ()
+			edge node {$\epsilon, \epsilon / \epsilon$} (q_2)
+			(q_2) edge [loop above] node {$b, A / \epsilon$} ()
+			edge node {$\epsilon, \$ / \epsilon $} (q_f);
+		\end{tikzpicture}
+	\end{minipage}
+	
+\end{enumerate}
+
+\section*{پاسخ}
+
+\begin{enumerate}
+	\item 
+	\begin{minipage}{\textwidth}
+		\centering
+		\begin{tikzpicture}[shorten >=1pt, node distance=3.8cm, on grid, auto, scale=1.2, every node/.style={transform shape, font=\Large}]
+			% First diagram
+			\node[state, initial] (q_0) {$q_0$};
+			\node[state] (q_1) [above right=of q_0] {$q_1$};
+			\node[state] (q_2) [right=of q_1] {$q_2$};
+			\node[state] (q_3) [right=of q_2] {$q_3$};
+			\node[state] (q_4) [right=of q_3] {$q_4$};
+			\node[state] (q_5) [below right=of q_0] {$q_5$};
+			\node[state] (q_6) [right=of q_5] {$q_6$};
+			\node[state] (q_7) [right=of q_6] {$q_7$};
+			\node[state] (q_8) [right=of q_7] {$q_8$};
+			\node[state, accepting] (q_F) [below right=of q_4] {$q_F$};
+			
+			\path[->]
+			(q_0) edge node {$\epsilon, \epsilon/\$$} (q_1)
+			edge node[below left] {$\epsilon, \epsilon/\$$} (q_5)
+			(q_1) edge [loop above] node {$a, \epsilon/A$} ()
+			edge node {$\epsilon, \epsilon/\epsilon$} (q_2)
+			(q_2) edge [loop above] node {$b, A/\epsilon$} ()
+			edge node {$\epsilon, A/\epsilon - \epsilon, \$/\$$} (q_3)
+			(q_3) edge [loop above] node {$\epsilon, A/\epsilon$} ()
+			edge node {$\epsilon, \$/\$$} (q_4)
+			(q_4) edge node {$\epsilon, \epsilon/\epsilon$} (q_F)
+			(q_5) edge [loop above] node {$a, \epsilon/\epsilon$} ()
+			edge node {$\epsilon, \epsilon/\epsilon$} (q_6)
+			(q_6) edge [loop above] node {$b, \epsilon/B$} ()
+			edge node {$\epsilon, \epsilon/\epsilon$} (q_7)
+			(q_7) edge [loop above] node {$c, B/\epsilon$} ()
+			edge node {$\epsilon, \$/\$$} (q_8)
+			(q_8) edge node {$\epsilon, \epsilon/\epsilon$} (q_F);
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\item 
+	\begin{minipage}{\textwidth}
+		\centering
+		\begin{tikzpicture}[shorten >=1pt, node distance=3.8cm, on grid, auto, scale=1.2, every node/.style={transform shape, font=\Large}]
+			% Second diagram
+			\node[state, initial] (q_0) {$q_0$};
+			\node[state] (q_1) [right=of q_0] {$q_1$};
+			\node[state] (q_2) [right=of q_1] {$q_2$};
+			\node[state] (q_3) [right=of q_2] {$q_3$};
+			\node[state] (q_4) [below=of q_2] {$q_4$};
+			\node[state] (q_6) [below=of q_1] {$q_6$};
+			\node[state] (q_8) [left=of q_6] {$q_8$};
+			\node[state, accepting] (q_F) [left=of q_8] {$q_F$};
+			\node[state] (q_7) [below=of q_6] {$q_7$};
+			
+			\path[->]
+			(q_0) edge node {$a, \epsilon/\$$} (q_1)
+			(q_1) edge [loop above] node {$a, \epsilon/A$} ()
+			edge node {$b, \epsilon/\epsilon$} (q_2)
+			(q_2) edge node {$b, \epsilon/\epsilon$} (q_3)
+			(q_3) edge node {$b, \epsilon/B$} (q_4)
+			(q_4) edge [bend right] node {$\epsilon, \epsilon/\epsilon$} (q_6)
+			edge [bend left] node[left] {$b, \epsilon/\epsilon$} (q_2)
+			(q_6) edge[bend left=20] node[right] {$c, \epsilon/\epsilon$} (q_7)
+			(q_7) edge[bend left=20] node[left] {$c, B/\epsilon$} (q_6)
+			(q_6) edge node {$\epsilon, \epsilon/\epsilon$} (q_8)
+			(q_8) edge [loop above] node {$d, A/\epsilon$} ()
+			edge node {$\epsilon, \$/\epsilon$} (q_F);
+		\end{tikzpicture}
+	\end{minipage}
+	\item \(L = \{ a^i b^j c^k \mid i, j, k \geq 0; \, i = j \lor j = k \}\)
+	\item \(L = \{ a^n b^m \mid n \leq m \leq 2n \}\)
+\end{enumerate}
+
+
+\section*{پرسش پنجم}
+
+
+با بکارگیری لم تزریق نشان دهید که زبان‌های زیر مستقل از متن نیستند. 
+
+\begin{enumerate}
+	\item \( L = \{ a^i b^j c^k \mid i \leq j \leq k \} \) \nomre{5}
+	\item \( L = \{ ww \mid w \in \{0, 1\}^* \} \) \nomre{5}
+	\item \( L = \{ w \in \{a, b, c, d\}^* \mid n_c(w) > n_a(w) \,\&\, n_c(w) > n_b(w) \,\&\, n_c(w) > n_d(w) \} \) \nomre{5}
+\end{enumerate}
+
+
+
+\section*{پاسخ}
+
+\begin{enumerate}
+	\item 
+	فرض کنیم \( L \) مستقل از متن باشد. بنابراین، باید بتوان از لمه پامپینگ برای زبان‌های مستقل از متن استفاده کرد.
+	
+	عدد طبیعی \( n \) وجود دارد که برای هر رشته \( w \in L \) با \( |w| \geq n \)، می‌توان نوشت \( w = uvxyz \) به طوری که \( |vxy| \leq n \)، \( |vy| > 0 \) و \( uv^i xy^i z \in L \) برای همه \( i \geq 0 \).
+	
+	رشته \( w = a^n b^n c^n \) را انتخاب می‌کنیم که \( |w| = 3n \).
+	
+	سه حالت ممکن برای جایگاه \( vxy \) وجود دارد:
+	
+	\begin{enumerate}
+		\item \( vxy \) فقط شامل یک نوع حرف (مثلاً فقط \( a \)، \( b \)، یا \( c \)) است. در این صورت، با پامپ \( i = 0 \) یا \( i > 1 \)، تعداد حروف از تعادل خارج می‌شود و رشته دیگر در زبان نخواهد بود.
+		\item \( vxy \) شامل حروفی از دو بخش متوالی مانند \( a \) و \( b \) یا \( b \) و \( c \) است. با پامپ \( i = 0 \) یا \( i > 1 \)، ترتیب یا تعداد حروف به هم می‌ریزد و رشته حاصل دیگر در زبان نیست.
+		\item \( vxy \) شامل هر سه نوع حرف \( a \)، \( b \)، و \( c \) است که با توجه به طول \( vxy \) و محدودیت \( |vxy| \leq n \) غیرممکن است.
+	\end{enumerate}
+	
+	در هر حالت، رشته حاصل خارج از زبان خواهد بود. بنابراین، \( L \) نمی‌تواند مستقل از متن باشد.
+	
+	\item 
+	فرض کنیم \( L \) مستقل از متن باشد. بنابراین، باید بتوان از لمه پامپینگ برای زبان‌های مستقل از متن استفاده کرد.
+	
+	عدد طبیعی \( n \) وجود دارد که برای هر رشته \( w \in L \) با \( |w| \geq n \)، می‌توان نوشت \( w = uvxyz \) به طوری که \( |vxy| \leq n \)، \( |vy| > 0 \) و \( uv^i xy^i z \in L \) برای همه \( i \geq 0 \).
+	
+	رشته \( w = 0^n 1^n 0^n 1^n \) را انتخاب می‌کنیم.
+	
+	سه حالت ممکن برای جایگاه \( vxy \) وجود دارد:
+	
+	\begin{enumerate}
+		\item \( vxy \) فقط در نیمه اول رشته قرار دارد. در این حالت، با پامپ \( i = 0 \)، نقطه‌ای که دو نیمه را تقسیم می‌کند به سمت چپ حرکت می‌کند و به این ترتیب قسمت سمت راست رشته با \( 1 \) شروع می‌شود، در حالی که باید با \( 0 \) شروع شود. بنابراین، رشته حاصل در زبان نیست.
+		
+		\item \( vxy \) فقط در نیمه دوم رشته قرار دارد. به روش مشابه، با پامپ \( i = 2 \)، نظم کلی رشته به هم می‌ریزد و رشته دیگر در زبان نخواهد بود.
+		
+		\item \( vxy \) بخشی از حروف از نیمه اول و بخشی از نیمه دوم را شامل می‌شود. در این حالت، با پامپ کردن \( i = 2 \)، تعداد \( 0 \)ها و \( 1 \)ها در هر نیمه برابر نخواهد بود و رشته حاصل در زبان نیست.
+	\end{enumerate}
+	
+	در هر حالت، رشته حاصل خارج از زبان خواهد بود. بنابراین، \( L \) نمی‌تواند مستقل از متن باشد.
+	
+	
+	\item
+	
+	فرض کنیم \( L \) مستقل از متن باشد. بنابراین، باید بتوان از لمه پامپینگ برای زبان‌های مستقل از متن استفاده کرد.
+	
+	عدد طبیعی \( n \) وجود دارد که برای هر رشته \( w \in L \) با \( |w| \geq n \)، می‌توان نوشت \( w = uvxyz \) به طوری که \( |vxy| \leq n \)، \( |vy| > 0 \) و \( uv^i xy^i z \in L \) برای همه \( i \geq 0 \).
+	
+	رشته \( w = c^{n+1} a^n b^n d^n \) را انتخاب می‌کنیم.
+	
+	حالات ممکن برای جایگاه \( vxy \) به شرح زیر است:
+	
+	\begin{enumerate}
+		\item \( vxy \) فقط شامل حروف \( c \) است. در این صورت، با پامپ \( i = 0 \)، تعداد \( c \)ها کاهش می‌یابد و شروط زبان نقض می‌شوند. بنابراین، رشته حاصل در زبان نیست.
+		
+		\item \( vxy \) فقط شامل یکی از حروف \( a \)، \( b \) یا \( d \) است. با پامپ \( i = 2 \)، تعداد آن حرف از \( c \)ها بیشتر می‌شود یا با آن برابر می‌شود و رشته خارج از زبان خواهد بود.
+		
+		\item \( vxy \) شامل دو حرف از \( a \)، \( b \)، یا \( d \) است. در این حالت نیز، با پامپ \( i = 2 \)، توازن بین تعداد \( c \)ها و سایر حروف به هم می‌ریزد و رشته حاصل در زبان نیست.
+		
+		\item \( vxy \) شامل \( c \) و \( a \) است. با پامپ \( i = 0 \)، تعداد \( c \)ها کاهش یافته و زبان نقض می‌شود.
+	\end{enumerate}
+	
+	در تمام حالات، رشته حاصل خارج از زبان خواهد بود. بنابراین، \( L \) نمی‌تواند مستقل از متن باشد.
+	
+\end{enumerate}
+
+
+
+
+
+
+\section*{پرسش امتیازی}
+\[
+\begin{aligned}
+	A &\rightarrow bAA \mid AbA \mid AAb \mid a \quad & & \\
+	L &= \{ w \in \{a, b\}^* \mid n_a(w) = n_b(w) + 1 \}
+\end{aligned}
+\]
+\begin{enumerate}
+	\item {ثابت کنید که زبان دستور زبان مستقل از متن بالا معادل زبان \( L \) است .} \nomre{4}
+	\item {خودکاره پشته‌ا‌‌‌ی قطعی زبان ارایه شده را رسیم کنید.} \nomre{2}
+	\item {با چه تغییری در خودکاره پشته‌ا‌‌‌‌‌ی‌  قطعی می‌توانیم یک خودکاره پشته‌ای قطعی بسازیم که رشته‌های زبان \(\{ x \# y \mid x \in L, xy \in L \}\) را می‌پذیرد.} \nomre{4}
+\end{enumerate}
+
+
+\section*{پاسخ}
+
+
+\begin{enumerate}
+	\item 
+	\textbf{اثبات:}
+	
+	برای اثبات $L_1 = L$ از دو بخش زیر استفاده می‌کنیم: 
+	
+	\textbf{1. اثبات $L_1 \subseteq L$} 
+	
+	یعنی هر رشته‌ای که توسط گرامر تولید می‌شود، در زبان $L$ قرار دارد. به عبارت دیگر، هر رشته‌ای که این گرامر تولید می‌کند، تعداد $a$هایش یکی بیشتر از تعداد $b$هایش است. 
+	
+	\textbf{روش اثبات:} از استقرای قوی استفاده می‌کنیم. 
+	
+	\textbf{پایه:} برای رشته‌های با طول 1، واضح است که تنها رشته $a$ تولید می‌شود، که در آن $n_a(w) = 1$ و $n_b(w) = 0$، پس $n_a(w) = n_b(w) + 1$ برقرار است. 
+	
+	\textbf{فرض استقرا:} فرض می‌کنیم برای تمام رشته‌های به طول 1 تا $2k-1$، تعداد $a$هایشان یکی بیشتر از تعداد $b$هایشان است. 
+	
+	\textbf{گام استقرا:} می‌خواهیم اثبات کنیم برای هر رشته به طول $2k+1$ که از گرامر به دست می‌آید، این خاصیت همچنان برقرار است. 
+	
+	\begin{itemize}
+		\item اگر $w = bAA$ باشد، رشته‌های $A$ تولید شده قبلاً با فرض استقرا این خاصیت را دارند. بنابراین مجموع رشته $w$ نیز این خاصیت را دارد.
+		\item اگر $w = AbA$، مشابه حالت قبل، دو بخش $A$ و رشته میانی $b$ نیز این خاصیت را حفظ می‌کنند.
+		\item اگر $w = AAb$، به دلیل وجود دو $A$ و یک $b$، همچنان این خاصیت برقرار می‌ماند.
+	\end{itemize}
+	
+	\noindent
+	\textbf{2. اثبات $L \subseteq L_1$} 
+	
+	یعنی هر رشته‌ای که در زبان $L$ قرار دارد، توسط گرامر تولید می‌شود. به عبارت دیگر، هر رشته‌ای که تعداد $a$هایش دقیقاً یکی بیشتر از تعداد $b$هایش باشد، می‌تواند از این گرامر تولید شود. 
+	
+	\textbf{روش اثبات:} مجدداً از استقرا استفاده می‌کنیم. 
+	
+	\textbf{پایه:} برای رشته $a$ که طول 1 دارد، می‌دانیم که توسط گرامر تولید می‌شود. 
+	
+	\textbf{فرض استقرا:} فرض کنیم هر رشته‌ای با طول حداکثر $2k-1$ که این خاصیت را دارد، توسط گرامر تولید می‌شود. 
+	
+	\textbf{گام استقرا:} می‌خواهیم نشان دهیم که هر رشته به طول $2k+1$ که این خاصیت را دارد، می‌تواند توسط گرامر تولید شود. 
+	
+	\begin{itemize}
+		\item اگر رشته با $b$ شروع شود، می‌توان آن را به صورت $w = buv$ نوشت، جایی که $u$ و $v$ هر دو تعداد $a$هایشان یکی بیشتر از $b$هایشان است. با فرض استقرا، $u$ و $v$ تولید می‌شوند، بنابراین $w$ نیز تولید می‌شود.
+		\item اگر رشته با $a$ شروع و پایان یابد، بررسی می‌کنیم که در یک نقطه بین رشته، تعداد $a$ها دقیقاً یکی بیشتر از تعداد $b$ها می‌شود. این نقطه به ما امکان می‌دهد که رشته را به دو بخش تقسیم کنیم که هر دو بخش توسط گرامر تولید می‌شوند.
+	\end{itemize}
+	
+	
+	\bigskip
+	\item 
+	\begin{minipage}{\textwidth}
+		\centering
+		\begin{tikzpicture}[shorten >=1pt, node distance=3.5cm, on grid, auto, every node/.style={transform shape, font=\Large}]
+			% Nodes
+			\node[state, initial] (q_0) {$q_0$};
+			\node[state] (q_1) [right=of q_0] {$q_1$};
+			\node[state, accepting] (q_F) [right=of q_1] {$q_F$};
+			
+			% Paths
+			\path[->]
+			(q_0) edge node {$\epsilon, \epsilon / S\$$} (q_1)
+			(q_1) edge [loop above] node {$A_*$} ()
+			edge node {$\epsilon, \$ / \epsilon$} (q_F);
+		\end{tikzpicture}
+		
+		\vspace{1em} % Adds a small vertical space for better separation
+		\lr{\( A_* \) : \( a, a / \epsilon \) \textcolor{red}{\&}
+			\( b, b / \epsilon \) \textcolor{red}{\&}
+			\( \epsilon, T / TT \) \textcolor{red}{\&}
+			\( \epsilon, T / \epsilon \) \textcolor{red}{\&}
+			\( \epsilon, T / aTb \) \textcolor{red}{\&}
+			\( \epsilon, T / bTa \) \textcolor{red}{\&}
+			\( \epsilon, S / TbT \)}
+		
+		
+	\end{minipage}
+	\bigskip
+	\item 
+	\textbf{ایجاد یک حالت جدید برای هر حالت پذیرش}: \\
+	برای هر حالت پذیرش \( q_f \) در ماشین پشته‌ای اصلی، یک حالت جدید \( q'_f \) ایجاد می‌کنیم. این حالت جدید تنها از طریق یک انتقال خاص از حالت پذیرش \( q_f \) قابل دسترسی خواهد بود.\bigskip
+	
+	\textbf{اضافه کردن انتقال \( (\#, \epsilon / \epsilon) \)}: \\
+	از حالت پذیرش \( q_f \)، یک انتقال با نماد \( \# \) و بدون تغییر در پشته، یعنی \( (\#, \epsilon / \epsilon) \)، به حالت جدید \( q'_f \) اضافه می‌کنیم. این انتقال به ما اجازه می‌دهد که زمانی که \( \# \) دیده می‌شود، از حالت پذیرش به حالت جدید برویم.\bigskip
+	
+	\textbf{کپی کردن یال‌های خروجی}: \\
+	تمامی یال‌های خروجی که از حالت پذیرش \( q_f \) به سایر حالات ماشین پشته‌ای متصل بودند، اکنون به حالت جدید \( q'_f \) متصل می‌شوند. به عبارت دیگر، رفتارهایی که از حالت \( q_f \) انتظار می‌رفت، اکنون از حالت \( q'_f \) شروع خواهند شد.\bigskip
+	
+	\textbf{هدف این تغییرات}: 
+	هدف از این تغییرات این است که ماشین پشته‌ای بتواند رشته‌های \( x \) و \( xy \) را به درستی پردازش کند و فرآیند به این صورت خواهد بود:
+	
+	\textbf{قبل از دیدن \( \# \)}: ماشین \( x \) را پردازش می‌کند و به حالت پذیرش \( q_f \) می‌رسد. 
+	
+	\textbf{دیدن \( \# \)}: با مشاهده \( \# \)، ماشین به حالت جدید \( q'_f \) منتقل می‌شود. 
+	
+	\textbf{بعد از \( \# \)}: ماشین شروع به پردازش رشته \( y \) می‌کند، با استفاده از همان رفتارهایی که برای \( x \) و \( y \) در زبان اصلی \( L \) تعریف شده بودند.
+	
+	
+\end{enumerate}
+
+

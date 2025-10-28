@@ -1,0 +1,309 @@
+\section*{پرسش نخست}
+
+در سناریوی زیر، تصور کنید که شما یک \lr{http request}به یک ماشین دیگر در جایی از شبکه ارسال می‌کنید.  
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/image1.png}
+\end{center}
+
+
+
+کدام لایه در \lr{IP stack} بیشترین تطابق را با عبارت \verb|wire the on live bits | دارد؟
+
+\section*{پرسش دوم}
+در سناریوی زیر، چهار سرور مختلف به چهار کلاینت مختلف از طریق مسیرهای سه‌گامی متصل هستند.  
+این چهار جفت یک \lr{middle hop} مشترک دارند با ظرفیت انتقال \(R = 100 \, \text{Mbps}\).  
+چهار \lr{link} از \lr{server}ها به \lr{shared link} هرکدام ظرفیتی برابر با \(R_S = 100 \, \text{Mbps}\) دارند.  
+
+
+هر یک از چهار \lr{link} از \lr{shared middle link} به یک \lr{client} ظرفیتی برابر با \(R_C = 40 \, \text{Mbps}\) دارد.  
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/image2.png}
+\end{center}
+
+
+
+
+
+حداکثر          \lr{end-to-end throughput} قابل دستیابی (بر حسب Mbps) برای هر یک از چهار جفت \lr{client-to-server} چند است،  
+با فرض اینکه \lr{middle link} به‌طور عادلانه تقسیم شود (نرخ انتقال خود را به طور مساوی تقسیم کند)؟
+
+\section*{پرسش سوم}
+در این مسئله، شما زمان موردنیاز برای توزیع یک \lr{file} را که در ابتدا روی یک \lr{server} قرار دارد،  
+به \lr{clients} از طریق یا \lr{client-server download} یا \lr{peer-to-peer download} مقایسه خواهید کرد.  
+
+مسئله این است که یک \lr{file} با اندازه‌ی \(F = 5 \,\text{Gbits}\) به هر یک از 8 \lr{peer} توزیع شود.  
+فرض کنید \lr{server} دارای نرخ \lr{upload} برابر با \(u = 87 \,\text{Mbps}\) است.  
+8 \lr{peer} دارای نرخ‌های    \lr{upload} و \lr{download}  به شرح زیر هستند:  
+\begin{table}[h]
+
+\centering
+\caption{نرخ‌های \lr{upload} و \lr{download} برای ۸ \lr{peer}}
+\begin{tabular}{c S[table-format=2.0] S[table-format=2.0]}
+\toprule
+\lr{peer} & {$u_i$ (\si{\mega\bit\per\second})} & {$d_i$ (\si{\mega\bit\per\second})} \\
+\midrule
+1 & 23 & 10 \\
+2 & 24 & 12 \\
+3 & 10 & 13 \\
+4 & 25 & 40 \\
+5 & 17 & 30 \\
+6 & 19 & 13 \\
+7 & 30 & 34 \\
+8 & 21 & 37 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/image3.png}
+\end{center}
+
+حداقل زمانی که لازم است تا این \lr{file} از \lr{central server} به 8 \lr{peer} با استفاده از  
+\lr{client-server model} توزیع شود، چقدر است؟
+
+\section*{پرسش چهارم}
+فرض کنید درون مرورگر وب خود روی یک لینک کلیک می‌کنید تا یک صفحه‌ی وب دریافت کنید. 
+آدرس \lr{IP} مربوط به \lr{URL} در میزبان محلی کش نشده است، بنابراین یک \lr{DNS lookup} لازم است تا آدرس \lr{IP} به دست آید. 
+فرض کنید تنها یک \lr{DNS server}، یعنی \lr{local DNS cache}، با یک \lr{RTT} تأخیر برابر با
+ \(\mathrm{RTT}_{0} = 1~\mathrm{msec}\) مورد پرس‌وجو قرار می‌گیرد. 
+
+در ابتدا فرض کنید صفحه‌ی وب مربوط به لینک دقیقاً شامل یک شیء است که از مقدار کمی متن \lr{HTML} تشکیل شده است. 
+فرض کنید \lr{RTT} بین میزبان محلی و \lr{Web server} شامل شیء برابر است با
+\[
+\mathrm{RTT}_{\text{HTTP}} = 40~\mathrm{msec}
+\]
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/image4.png}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+با فرض زمان انتقال صفر برای شیء \lr{HTML}، چه مقدار زمان (بر حسب میلی‌ثانیه) از زمانی که کاربر روی لینک کلیک می‌کند تا زمانی که کلاینت شیء را دریافت می‌کند، سپری می‌شود؟
+
+\section*{پرسش پنجم}
+
+به شکل زیر توجه کنید، جایی که \lr{server} در حال ارسال یک \lr{HTTP RESPONSE} به \lr{client} است.  
+
+\lr{image 5}  
+
+فرض کنید پیام \lr{HTTP RESPONSE} از \lr{server-to-client} به صورت زیر باشد:
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/images5.png}
+\end{center} 
+
+
+
+
+
+
+\begin{verbatim}
+HTTP/1.1 200 OK
+Date: Sun, 05 Oct 2025 07:09:48 +0000
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Sun, 05 Oct 2025 07:15:08 +0000
+ETag:17dc6-a5c-bf716880.
+Content-Length: 77095
+Keep-Alive: timeout=32, max=82
+Connection: Keep-alive
+Content-type: text/html
+\end{verbatim}
+
+\begin{enumerate}[label=\alph*)]
+\item آیا پیام پاسخ از \lr{HTTP 1.0} استفاده می‌کند یا \lr{HTTP 1.1}؟
+\item آیا \lr{server} توانسته است سند را با موفقیت ارسال کند؟ (بله یا خیر)
+\item اندازه‌ی سند چند بایت است؟
+\item نوع فایل ارسال‌شده توسط \lr{server} در پاسخ چیست؟
+\end{enumerate}
+
+\section*{پرسش ششم}
+
+فرض کنید کاربری می‌خواهد به سایت \lr{gaia.cs.umass.edu} مراجعه کند، اما مرورگر او آدرس \lr{IP} این وب‌سایت را نمی‌داند. در این مثال، با توجه به نوع درخواست‌های \lr{DNS} به سوالات داده شده پاسخ دهید.
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/screenshot002}
+\end{center}
+
+\subsection*{درخواست‌های \lr{Iterative}}
+
+\begin{itemize}
+\item بین مراحل 1 و 2، سرور \lr{DNS} محلی ابتدا کجا را بررسی می‌کند؟ پاسخ را از بین \lr{User}، \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item بین مراحل 2 و 3، اگر سرور \lr{DNS} ریشه آدرس \lr{IP} مورد نظر را نداشته باشد، پاسخ به کجا ارجاع داده می‌شود؟ پاسخ را از بین \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item بین مراحل 4 و 5، اگر سرور \lr{DNS} سطح دامنه (\lr{TLD}) آدرس \lr{IP} مورد نظر را نداشته باشد، پاسخ به کجا ارجاع داده می‌شود؟ پاسخ را از بین \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item بین مراحل 6 و 7، سرور \lr{DNS} معتبر (\lr{Authoritative}) با آدرس \lr{IP} مورد نظر پاسخ می‌دهد. چه نوع رکورد \lr{DNS} بازگردانده می‌شود؟
+\end{itemize}
+
+\subsection*{درخواست‌های \lr{Recursive}}
+
+\begin{itemize}
+\item بین مراحل 1 و 2، سرور \lr{DNS} محلی ابتدا کجا را بررسی می‌کند؟ پاسخ را از بین \lr{User}، \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item بین مراحل 2 و 3، سرور \lr{DNS} ریشه درخواست را به کجا ارسال می‌کند؟ پاسخ را از بین \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item بین مراحل 4 و 5، سرور \lr{DNS} معتبر پاسخ را به کجا ارسال می‌کند؟ پاسخ را از بین \lr{DNS Local}، \lr{DNS Root}، \lr{DNS TLD} یا \lr{DNS Authoritative} انتخاب کنید.
+\item در مراحل 6 تا 8، پاسخ در مسیر معکوس تا رسیدن به کاربر ارسال می‌شود. چه نوع رکورد \lr{DNS} بازگردانده می‌شود؟
+\item کدام نوع درخواست به عنوان روش بهتر در نظر گرفته می‌شود: \lr{Iterative} یا \lr{Recursive}؟
+\end{itemize}
+
+
+
+\section*{پرسش هفتم}
+
+
+فرض کنید کاروان 20 خودرو دارد و عوارضی هر خودرو را با نرخ یک خودرو در هر 5 ثانیه سرویس‌دهی می‌کند (یعنی ارسال می‌کند). پس از دریافت سرویس، هر خودرو به عوارضی بعدی که 200 کیلومتر فاصله دارد با سرعت 10 کیلومتر بر ثانیه حرکت می‌کند. همچنین فرض کنید هرگاه خودروی اول کاروان به عوارضی می‌رسد، باید در ورودی عوارضی منتظر بماند تا تمام خودروهای دیگر کاروان برسند و پشت سر آن صف بکشند و سپس سرویس‌دهی در عوارضی آغاز شود (یعنی کل کاروان باید در عوارضی ذخیره شود تا خودروی اول عوارض را بپردازد و به سمت عوارضی بعدی حرکت کند).
+
+
+\begin{center}
+	\includegraphics[width=1\linewidth]{images/screenshot003}
+\end{center}
+
+
+\begin{itemize}
+	\item وقتی یک خودرو وارد سرویس در عوارضی می‌شود، چقدر طول می‌کشد تا سرویسش تمام شود و از عوارضی خارج شود؟
+	\item چقدر طول می‌کشد تا کل کاروان در عوارضی سرویس بگیرند (از لحظه ورود خودروی اول به سرویس تا خروج خودروی آخر از عوارضی)؟
+	\item پس از خروج خودروی اول از عوارضی، تا رسیدن آن به عوارضی بعدی چقدر زمان می‌برد؟
+	\item پس از خروج خودروی آخر از عوارضی، تا رسیدن آن به عوارضی بعدی چقدر زمان می‌برد؟
+	\item پس از خروج خودروی اول از عوارضی، تا ورود آن به سرویس در عوارضی بعدی چقدر زمان می‌برد؟
+	\item آیا زمانی وجود دارد که همزمان دو خودرو در حال سرویس باشند، یکی در عوارضی اول و دیگری در عوارضی دوم؟ 
+	\item آیا زمانی وجود دارد که هیچ خودرویی در حال سرویس نباشد، یعنی کاروان در عوارضی اول تمام شده ولی هنوز به عوارضی دوم نرسیده است؟
+\end{itemize}
+
+\section*{پرسش هشتم}
+
+
+به سناریوی زیر توجه کنید که در آن \lr{Alice} یک ایمیل برای \lr{Bob} ارسال می‌کند. فرض کنید هر دو، یعنی \lr{Bob} و \lr{Alice}، از پروتکل \lr{POP3} استفاده می‌کنند.
+
+\begin{center}
+	\includegraphics[width=1\linewidth]{images/screenshot004}
+\end{center}
+
+
+\begin{itemize}
+	\item در نقطه 2 از دیاگرام، از چه پروتکلی استفاده می‌شود؟
+	\item در نقطه 4 از دیاگرام، از چه پروتکلی استفاده می‌شود؟
+	\item در نقطه 6 از دیاگرام، از چه پروتکلی استفاده می‌شود؟
+	\item آیا پروتکل \lr{SMTP} از \lr{TCP} استفاده می‌کند یا از \lr{UDP}؟
+	\item آیا \lr{SMTP} یک پروتکل \lr{push} است یا \lr{pull}؟
+	\item آیا \lr{POP3} یک پروتکل \lr{push} است یا \lr{pull}؟
+	\item \lr{SMTP} از چه شماره پورتی استفاده می‌کند؟
+	\item \lr{POP3} از چه شماره پورتی استفاده می‌کند؟
+\end{itemize}
+
+\pagebreak
+
+
+
+\section*{سوالات عملی}
+
+در این تمرین سه فایل با فرمت 
+\lr{pcapng}
+ در اختیار شما قرار گرفته است.
+هر فایل شامل ترافیک واقعی شبکه مرتبط با اجرای دستورات nslookup و مشاهدهٔ وب‌سایت‌هاست.
+با استفاده از نرم‌افزار Wireshark ، این فایل‌ها را باز کرده و به سؤالات زیر پاسخ دهید.
+نیازی به اجرای سناریو در محیط واقعی نیست.
+
+\subsection*{فایل اول}
+
+\begin{enumerate}
+
+	\item
+	در Wireshark ، اولین پیام DNS مربوط به حل نام \lr{gaia.cs.umass.edu} را پیدا کنید.
+	شمارهٔ بستهٔ این پیام چیست؟ 
+	آیا این پیام از طریق \lr{UDP} ارسال شده یا \lr{TCP}؟
+	
+	\item
+	پیام پاسخ DNS مربوط به پرس‌وجوی سؤال قبل را بیابید. 
+	شمارهٔ بستهٔ آن چیست؟ 
+	آیا از طریق \lr{UDP} دریافت شده یا \lr{TCP}؟
+	
+	\item
+	پورت مقصد در پیام \lr{DNS Query} چیست؟ 
+	پورت مبدأ در پیام \lr{DNS Response} چیست؟
+	
+	\item
+	پیام \lr{DNS Query} به چه آدرس IP ارسال شده است؟
+	
+	\item
+	پیام \lr{DNS Query} چند «سؤال» (\lr{Question}) و چند «پاسخ» (\lr{Answer}) دارد؟
+	
+	\item
+	پیام \lr{DNS Response} مربوط به همان پرس‌وجو چند «سؤال» و چند «پاسخ» دارد؟
+	
+	\item
+	صفحهٔ وب
+	 \lr{http://gaia.cs.umass.edu/kurose\_ross/}
+	شامل تصویری با آدرس زیر است:
+	\begin{latin}
+		http://gaia.cs.umass.edu/kurose\_ross/header\_graphic\_book\_8E\_2.jpg
+	\end{latin}
+	به پرسش‌های زیر پاسخ دهید:
+	\begin{enumerate}
+		\item شمارهٔ بستهٔ مربوط به درخواست \lr{HTTP GET} اولیه برای فایل اصلی چیست؟
+		\item شمارهٔ بستهٔ مربوط به \lr{DNS Query} جهت حل نام \lr{gaia.cs.umass.edu} برای این درخواست چیست؟
+		\item شمارهٔ بستهٔ مربوط به پاسخ \lr{DNS Response} چیست؟
+		\item شمارهٔ بستهٔ مربوط به درخواست \lr{HTTP GET} برای تصویر بالا چیست؟
+		\item شمارهٔ بستهٔ مربوط به \lr{DNS Query} دوم (در صورت وجود) چیست؟
+		\item توضیح دهید که \lr{DNS Caching} چگونه بر پاسخ این بخش تأثیر می‌گذارد.
+	\end{enumerate}
+	
+	
+\end{enumerate}
+
+\subsection*{فایل دوم}
+
+\begin{enumerate}
+	
+	\item
+	در بسته‌های مربوط به اجرای دستور \lr{nslookup  www.cs.umass.edu}،
+	پورت مقصد در پیام پرس‌وجوی \lr{DNS} چیست و پورت مبدأ در پیام پاسخ چیست؟
+	
+	\item
+	پیام \lr{DNS Query} به چه آدرس IP ارسال شده است؟ 
+	آیا این IP همان سرور \lr{DNS} محلی پیش‌فرض شماست؟
+	
+	\item
+	نوع پرس‌وجوی \lr{DNS} چیست (مانند \lr{Type=A} یا \lr{Type=NS})؟ 
+	آیا پیام \lr{Query} پاسخی در خود دارد؟
+	
+	\item
+	پیام \lr{DNS Response} متناظر با پرس‌وجو چند «سؤال» و چند «پاسخ» دارد؟
+	
+
+	
+\end{enumerate}
+
+\subsection*{فایل سوم}
+
+\begin{enumerate}
+	
+		\item
+	در اجرای دستور زیر:
+	\begin{latin}
+		nslookup -type=NS umass.edu
+	\end{latin}
+	پیام پرس‌وجوی \lr{DNS} به چه آدرس IP ارسال شده است؟ 
+	آیا این آدرس همان سرور \lr{DNS} محلی هست؟
+	
+	\item
+	پیام \lr{DNS Query} چند «سؤال» دارد؟ 
+	آیا شامل «پاسخ» نیز هست؟
+	
+	\item
+	پیام \lr{DNS Response} مربوط به پرس‌وجوی بالا (از نوع \lr{NS}) چند «پاسخ» دارد؟
+	پاسخ‌ها چه اطلاعاتی شامل می‌شوند؟
+	چند رکورد اضافی (\lr{Additional Resource Record}) بازگردانده شده است؟
+	این رکوردهای اضافی چه اطلاعاتی ارائه می‌دهند؟
+	
+\end{enumerate}
