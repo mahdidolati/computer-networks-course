@@ -1,0 +1,73 @@
+\section*{سوال ۲ عملی}
+
+\subsection*{پیاده‌سازی \lr{Go-Back-N} روی \lr{UDP}}
+
+\subsection*{(۱) هدف}
+در این تمرین قصد داریم یک پروتکل انتقال داده‌ی قابل اعتماد (\lr{Reliable Data Transfer}) را با استفاده از پروتکل \lr{UDP} پیاده‌سازی کنیم. \lr{UDP} ذاتاً غیرقابل اعتماد است و هیچ تضمینی برای رسیدن، به‌ترتیب یا عدم تکرار بسته ارائه نمی‌دهد. هدف این تمرین پیاده‌سازی یک لایه‌ی انتقال قابل اعتماد بر روی \lr{UDP} است که رفتار آن مشابه پروتکل \lr{Go-Back-N} (\lr{GBN}) باشد.
+
+\subsection*{(۲) مشخصات پیاده‌سازی}
+
+\subsubsection*{(۲.۱) ساختار کلی}
+پروژه شامل دو بخش \lr{client} و \lr{server} است.
+
+\subsubsection*{(۲.۲) عملکرد}
+\begin{itemize}
+  \item فرستنده داده‌ها را به بسته‌های \lr{UDP} تقسیم می‌کند و برای هر بسته \lr{Sequence Number} اختصاص می‌دهد.
+  \item گیرنده در \lr{GBN} فقط بزرگ‌ترین شماره‌ی توالی دریافت‌شده‌ی \lr{in-order} را نگه می‌دارد و برای آن \lr{cumulative ACK} ارسال می‌کند؛ بسته‌های \lr{Out-of-Order} را \lr{discard} می‌کند (ذخیره‌سازی در بافر سمت گیرنده وجود ندارد).
+  \item فرستنده یک \lr{Send Window} از حداکثر \lr{N} بسته‌ی ارسال‌شده ولی تأییدنشده نگه می‌دارد.
+  \item فرستنده حداقل یک تایمر برای قدیمی‌ترین بسته‌ی ارسال‌شده و تأییدنشده نگه می‌دارد؛ در صورت انقضای تایمر (\lr{Timeout}) بدون دریافت \lr{ACK} مربوط، همان بسته و همه‌ی بسته‌های بعد از آن در پنجره مجدداً ارسال می‌شوند (\lr{go-back-n}).
+\item با دریافت \lr{cumulative ACK} معتبر (مثلاً \lr{ACK(k)} یعنی تا \lr{k} تحویل \lr{in-order} شده)، تمام بسته‌ها با شماره کوچک‌تر و مساوی \(\ k\) از پنجره حذف و پنجره به جلو حرکت می‌کند.
+\end{itemize}
+
+\subsubsection*{(۲.۳) ویژگی‌ها}
+\begin{itemize}
+  \item \lr{Pipelining} (ارسال هم‌زمان چند بسته تا سقف \lr{Window})
+  \item \lr{Cumulative ACK} در گیرنده
+  \item عدم نگه‌داری \lr{Out-of-Order} در گیرنده (\lr{discard})
+  \item تشخیص و جبران \lr{Packet Loss} با \lr{Retransmission} تجمعی پس از \lr{Timeout}
+  \item امکان شبیه‌سازی \lr{Packet Loss} و \lr{Reordering} برای تست عملکرد
+\end{itemize}
+
+\subsubsection*{(۲.۴) محدودیت‌ها}
+\begin{itemize}
+  \item استفاده از هیچ کتابخانه‌ی خارجی برای مدیریت \lr{GBN} مجاز نیست (فقط \lr{socket}، \lr{threading}، \lr{time}، \lr{random} و کتابخانه‌های  استاندارد پایتون مجاز است).
+  \item ارسال پیام‌ها باید صرفاً از طریق \lr{UDP} انجام شود (نه \lr{TCP}).
+\end{itemize}
+
+\subsection*{(۳) تحویل نهایی}
+
+\subsubsection*{(۱.۳) \lr{README}}
+شامل موارد زیر:
+\begin{itemize}
+  \item نام، نام‌خانوادگی، شماره دانشجویی
+  \item توضیح مختصر درباره‌ی طراحی و ساختار کد (معماری \lr{Sender/Receiver}، ساختار \lr{Packet}، نحوه‌ی مدیریت \lr{Window} و \lr{Timeout})
+  \item دستور اجرای سرور و کلاینت (نمونه دستورات)
+  \item توضیح سناریوهای تست، نحوه‌ی اجرای تست‌ها و نتایج به‌دست‌آمده (بخش ۴ را ببینید)
+\end{itemize}
+
+\subsubsection*{(۲.۳) \lr{Makefile}}
+شامل دستورات زیر:
+\begin{itemize}
+  \item \texttt \lr{run-server make}
+  \item \texttt \lr{run-client make}
+  \item \texttt \lr{test make} (اجرای اسکریپت تست توضیح‌داده‌شده در بخش ۴)
+\end{itemize}
+
+\subsubsection*{(۳.۳) پوشه‌ها}
+\begin{itemize}
+  \item \lr{client} شامل کد فرستنده، \lr{server} شامل کد گیرنده , \lr{tests} شامل فایل‌ها و اسکریپت‌های تست
+\end{itemize}
+
+\section*{۴) تست}
+
+\subsection*{۱.۴) طراحی تست‌ها}
+مجموعه‌ای از تست‌ها برای ارزیابی عملکرد طراحی و خلاصه‌ی نتایج را در \lr{README} گزارش دهید.
+
+تست‌ها باید کیس‌های مختلف از جمله \lr{packet loss} و \lr{reordering} را پوشش دهند.
+
+می‌توانید خطاهای شبکه (\lr{Loss/Reorder/Delay}) را در کد کلاینت یا سرور، 
+یا با استفاده از یک پروکسی مانند \lr{tests/netem\_proxy.py} شبیه‌سازی کنید 
+(هر روش صحیح دیگری نیز پذیرفته است).
+
+\subsection*{۲.۴) اجرای خودکار}
+با اجرای دستور \texttt{make test} تمام تست‌ها باید اجرا شوند و خروجی شامل \lr{Digest} پیام‌ها (ارسالی و دریافتی) باشد.

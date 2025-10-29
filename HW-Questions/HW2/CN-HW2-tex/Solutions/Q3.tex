@@ -1,0 +1,38 @@
+\section*{پاسخ:}
+
+\begin{enumerate}[label=\alph*)]
+
+\item 
+مقادیر \lr{Sequence Number} و \lr{ACK Number} برای هر پکت در جدول زیر آمده است:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{شماره پکت (T)} & \textbf{Seq Number} & \textbf{ACK Number} \\ \hline
+1 & 166 & 365 \\ \hline
+2 & 365 & 564 \\ \hline
+3 & 564 & 763 \\ \hline
+4 & 763 & X \\ \hline
+5 & 962 & 763 \\ \hline
+\end{tabular}
+\caption{مقادیر Seq و ACK برای پکت‌های متوالی}
+\end{table}
+
+\item 
+برای محاسبات از روابط استاندارد \lr{TCP RTT Estimation} استفاده شده است. (به اسلاید‌ها مراجعه کنید)
+نتایج به‌دست‌آمده در جدول زیر آمده است:
+\begin{table}[H]
+    \centering
+    \begin{latin}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{\#} & \textbf{EstimatedRTT (ms)} & \textbf{DevRTT (ms)} & \textbf{TimeoutInterval (ms)} \\ \hline
+    1 & 313.75 & 39.00 & 469.75 \\ \hline
+    2 & 313.28 & 30.19 & 434.03 \\ \hline
+    3 & 314.12 & 24.32 & 411.40 \\ \hline
+    \end{tabular}
+    \end{latin}
+    \caption{محاسبهٔ مقادیر جدید EstimatedRTT، DevRTT و TimeoutInterval}
+    \end{table}
+\end{enumerate}

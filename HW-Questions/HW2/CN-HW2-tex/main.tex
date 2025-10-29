@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+\input{Template/preamble.tex}
+
+\usepackage{csquotes}
+
+\newcommand{\courseName}{شبکه‌های کامپیوتری}
+\newcommand{\courseSemester}{پاییز 1404}
+\newcommand{\homeworkName}{تمرین دوم}
+\newcommand{\homeworkDue}{دکتر مهدی دولتی}
+\allowdisplaybreaks
+
+\begin{document}
+    \graphicspath{{Template/common/cover/},{Template/img/}}
+    \pagenumbering{gobble} 
+    \input{Template/common/cover/hwcover.tex}
+    \pagenumbering{arabic}  
+    % Insert content here %
+    %\part*{تمرین}
+    ‌
+  	\input{Questions/Q1}
+    \input{Solutions/Q1}
+    \input{Questions/Q2}
+    \input{Solutions/Q2}
+    \input{Questions/Q3}
+    \input{Solutions/Q3}
+    \input{Questions/Q4}
+    \input{Solutions/Q4}
+    \input{Questions/Q5}
+    \input{Solutions/Q5}
+    \input{Questions/practical_Q1}
+    \input{Solutions/practical_Q1}
+    \input{Questions/practical_Q2}
+
+    % \input{save}
+    
+
+%\hfill
+\end{document}
